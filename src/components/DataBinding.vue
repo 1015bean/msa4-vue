@@ -1,19 +1,19 @@
 <!-- 데이터 바인딩 -->
-<!-- HTML요소와 Vue 인스턴스의 데이터를 동적으로 연결하는 기능(선언적 렌더링) -->
+<!-- HTML요소와 state(script에서 작성한 데이터)를 동적으로 연결하는 기능(선언적 렌더링) -->
 
 <script setup>
   import { reactive, ref } from 'vue';   //'vue라이브러리'가 제공하는 툴 'ref'를 불러오기
 
   // ref( 데이터 )
-      // 데이터 바인딩 객체1 :object
-      // 타입제한 없이 사용할 수 있으나, 주로 프라이미티므 타입(원시타입)에 반응적 참조(유저의 동작에 대한 반응)를 위해 사용
-      // 프라이미티브 타입에 좀 더 나은 성능을 제공
+      // 데이터바인딩 객체1 :object
+      // 타입제한 없이 사용할 수 있으나, 
+      // 주로 프라이미티므 타입(원시타입)에 반응적 참조(유저의 동작에 대한 반응)를 위해 사용
   const cnt = ref(0);
       // ref객체의 경우 js에서 접근 시, 해당 값은 ref.value프로퍼티로 접근
   console.log(cnt.value);
 // --------------------------------------------------------------------------
   // reactive( 객체 )
-      // 데이터 바인딩 객체2 :object
+      // 데이터바인딩 객체2 :object
       // 객체만 사용 가능하고 , 해당 객체의 반응적 참조를 위해 사용
   const info = reactive({
     name: 'kim',
@@ -42,14 +42,15 @@
    <button type="button" @click="cnt++">증가</button>
    <button type="button" @click="cnt--">감소</button>
 
-   <!-- info 객체에 접근 -->
+   <!-- info 객체 및 그 속성값에 접근 -->
    <h3>{{ `${info.name} : ${info.age}` }}</h3>
 
-   <!-- 태그 속성명 앞에 ':'을 붙이고, 속성값에 데이터 바인딩 객체를 사용 -->
+   <!-- 속성값에 데이터 바인딩 객체를 사용 -->
+      <!-- HTML태그의 속성명(class id 등등) 앞에 ':'을 붙이고, 속성값에 데이터 바인딩 객체를 사용 -->
    <h3 class="test" :class="color">태그 속성값 데이터 바인딩</h3>
    <button type="button" @click="btnToggle">색깔 토글</button>
 
-   <!-- 양방향 데이터 바인딩: HTML에서 js데이터에 영향을 줌 -->
+   <!-- 양방향 데이터바인딩: HTML에서 js데이터에 영향을 줌 -->
        <!-- v-model 사용 -->
    <input type="text" v-model="id">
    <p>{{ id }}</p>
