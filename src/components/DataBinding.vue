@@ -47,8 +47,8 @@
    <!-- info 객체 및 그 속성값에 접근 -->
    <h3>{{ `${info.name} : ${info.age}` }}</h3>
 
-   <!-- 속성값에 데이터 바인딩 객체를 사용 -->
-      <!-- HTML태그의 속성명(class id 등등) 앞에 ':'을 붙이고, 속성값에 {데이터 바인딩 객체}를 사용 -->
+   <!-- v-bind: 속성값에 데이터 바인딩 객체를 사용 -->
+      <!-- ":" "HTML태그의 속성(html태그안에 들어가는 친구들)" = "js데이터(변수, 함수)" -->
    <h3 class="test" :class="color">태그 속성값 데이터 바인딩</h3>
    <button type="button" @click="btnToggle">색깔 토글</button>
 
