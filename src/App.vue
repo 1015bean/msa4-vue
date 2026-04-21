@@ -33,6 +33,7 @@ const flgLifeCycle = ref(true);
    <button type="button" @click="flgLifeCycle = !flgLifeCycle">라이프사이클 컴포넌트 토글</button>
 </template>
 
-<style>
+<style scoped>   
+      /* scoped: 자신 이외의 컴포넌트(상위&형제&자식 요소)에 이게 적용되지 않게 함 */
  /* CSS작성부분 */
 </style>
