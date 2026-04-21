@@ -43,7 +43,7 @@ import { reactive, ref } from 'vue';
   </div>
 </template>
 
-<!-- scoped: 상위&형제 요소(컴포넌트)에 이게 적용되지 않게 함 -->
+<!-- scoped: 자신 이외의 컴포넌트(상위&형제&자식 요소)에 이게 적용되지 않게 함 -->
 <style scoped> 
   .container {
     padding: 20px;
