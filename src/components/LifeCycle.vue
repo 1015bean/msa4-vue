@@ -4,6 +4,9 @@ import { onBeforeMount, onBeforeUnmount, onBeforeUpdate, onMounted, onUnmounted,
 const cnt = ref(0);
 
 // life cycle(생명주기) : 언제 코드 실행할지 알려주는 시스템 => 코드 실행하는 타이밍 문제 해결
+
+    // 백에서 데이터 받아오는 타이밍
+        // : 마운트 전: 처음 화면 렌더림에 시간 걸림(유저 ) // 마운트 후: 마운트 하고 대이터 받아서 다시 렌더링해야 함
     // mount: 컴포넌트가 처음 화면에 랜더링되는 단계
 onBeforeMount(() => {
   console.log('onBeforeMount', cnt.value);
